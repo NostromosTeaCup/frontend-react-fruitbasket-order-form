@@ -15,6 +15,13 @@
     width: auto;
 }
 
+.fruit-counters,
+form button {
+    margin: 8px 0;
+    width: 100px;
+    padding: 8px 0;
+}
+
 article {
     display: flex;
     flex-direction: row;
@@ -45,4 +52,33 @@ button {
     padding: 8px 0;
     text-transform: capitalize;
     margin: 12px 0;
+}
+
+/*----form-----*/
+
+form,
+.fruit-counters {
+    width: 500px;
+    padding: 8px 16px;
+    margin: 8px;
+    border: 1px solid #ededed;
+}
+
+form section {
+    margin: 20px 0 0 0;
+}
+
+label ~ input[type="text"],
+label ~ input[type="number"] {
+    margin-left: 8px;
+    width: 300px;
+}
+
+label {
+
+    padding-right: 8px;
+}
+
+textarea {
+    display: block;
 }
