@@ -2,11 +2,24 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+    //variabelen voor fruit counter
     const [strawberries, setStrawberries] = useState(0);
     const [bananas, setBananas] = useState(0);
     const [apples, setAppels] = useState(0);
     const [kiwis, setKiwis] = useState(0);
 
+    //variabelen voor formulier
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [age, setAge] = useState('0');
+    const [zipcode, setZipcode] = useState('');
+    const [deliveryFrequency, toggleDeliveryFrequency] = useState('week');
+    const [deliveryTimeslot, toggleDeliveryTimeslot] = useState('daytime');
+    const [remark, setRemark] = useState('');
+    const [agreeTerms, toggleAgreeTerms] = useState(false);
+
+
+    //functie reset button alles op 0 terug zetten
     function resetFruits() {
         setStrawberries(0);
         setBananas(0);
@@ -112,6 +125,8 @@ function App() {
                     type="text"
                     name="firstname"
                     id="first-name"
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
                     />
             </section>
             <section>
@@ -122,6 +137,8 @@ function App() {
                     type="text"
                     name="lastname"
                     id="last-name"
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
                 />
             </section>
             <section>
@@ -132,6 +149,8 @@ function App() {
                     type="number"
                     name="age"
                     id="age"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
                 />
             </section>
             <section>
@@ -142,6 +161,8 @@ function App() {
                     type="text"
                     name="zipcode"
                     id="zipcode"
+                    value={zipcode}
+                    onChange={(e) => setZipcode(e.target.value)}
                 />
             </section>
             <section>
@@ -150,7 +171,9 @@ function App() {
                 </label>
                 <select
                     name="delivery"
-                    id="delivery">
+                    id="delivery"
+                    value={deliveryFrequency}
+                    onChange={(e) => toggleDeliveryFrequency(e.target.value)}>
                     <option
                         value="week">
                         Iedere week
@@ -169,7 +192,9 @@ function App() {
                 <input type="radio"
                     value="daytime"
                     name="timeslot"
-                    id="timeslot-daytime"/>
+                    id="timeslot-daytime"
+                    checked={deliveryTimeslot === 'daytime'}
+                    onChange={(e) => toggleDeliveryTimeslot(e.target.value)}/>
                 <label
                     htmlFor="timeslot-daytime">
                     Overdag
@@ -189,7 +214,9 @@ function App() {
                     name="remark"
                     id="remark"
                     cols="40"
-                    rows="6">
+                    rows="6"
+                    value={remark}
+                    onChange={(e) => setRemark(e.target.value)}>
                 </textarea>
             </section>
             <section>
@@ -197,8 +224,10 @@ function App() {
                     type="checkbox"
                     name="agree"
                     id="agree"
+                    value={agreeTerms}
+                    onChange={(e) => toggleAgreeTerms(e.target.checked)}
                 />
-                <label htmlFor="agree">Ik ga akkorrd met de voorwaarden</label>
+                <label htmlFor="agree">Ik ga akkoord met de voorwaarden</label>
             </section>
 
             <button>Verzend</button>
