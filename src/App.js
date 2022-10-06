@@ -89,6 +89,107 @@ function App() {
             </article>
             <button className="button-reset">reset</button>
         </section>
+
+        <form>
+            <section>
+                <label htmlFor="first-name">
+                    Voornaam
+                </label>
+                <input
+                    type="text"
+                    name="firstname"
+                    id="first-name"
+                    />
+            </section>
+            <section>
+                <label htmlFor="last-name">
+                    Achternaam
+                </label>
+                <input
+                    type="text"
+                    name="lastname"
+                    id="last-name"
+                />
+            </section>
+            <section>
+                <label htmlFor="age">
+                    Leeftijd
+                </label>
+                <input
+                    type="number"
+                    name="age"
+                    id="age"
+                />
+            </section>
+            <section>
+                <label htmlFor="zipcode">
+                    Postcode
+                </label>
+                <input
+                    type="text"
+                    name="zipcode"
+                    id="zipcode"
+                />
+            </section>
+            <section>
+                <label htmlFor="delivery">
+                    Bezorgfrequentie
+                </label>
+                <select
+                    name="delivery"
+                    id="delivery">
+                    <option
+                        value="week">
+                        Iedere week
+                    </option>
+                    <option
+                        value="biweekly">
+                        Om de week
+                    </option>
+                    <option
+                        value="month">
+                        Iedere maand
+                    </option>
+                </select>
+            </section>
+            <section>
+                <input type="radio"
+                    value="daytime"
+                    name="timeslot"
+                    id="timeslot-daytime"/>
+                <label
+                    htmlFor="timeslot-daytime">
+                    Overdag
+                </label>
+                <input type="radio"
+                       value="evening"
+                       name="timeslot"
+                       id="timeslot-evening"/>
+                <label
+                    htmlFor="timeslot-evening">
+                    's Avonds
+                </label>
+            </section>
+            <section>
+                <label htmlFor="remark">Opmerking</label>
+                <textarea
+                    name="remark"
+                    id="remark"
+                    cols="40"
+                    rows="6">
+                </textarea>
+            </section>
+            <section>
+                <input
+                    type="checkbox"
+                    name="agree"
+                    id="agree"
+                />
+                <label htmlFor="agree">Ik ga akkorrd met de voorwaarden</label>
+            </section>
+
+            <button>Verzend</button>
+        </form>
     </>
   );
 }
