@@ -7,6 +7,13 @@ function App() {
     const [apples, setAppels] = useState(0);
     const [kiwis, setKiwis] = useState(0);
 
+    function resetFruits() {
+        setStrawberries(0);
+        setBananas(0);
+        setAppels(0);
+        setKiwis(0)
+    }
+
   return (
     <>
       <h1>Fruitmand bezorgservice</h1>
@@ -87,7 +94,13 @@ function App() {
                 >
                 </button>
             </article>
-            <button className="button-reset">reset</button>
+            <button
+                className="button-reset"
+                type="button"
+                onClick={() => resetFruits()}
+            >
+                reset
+            </button>
         </section>
 
         <form>
